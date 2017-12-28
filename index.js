@@ -9,9 +9,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 //These two lines allow use to acces the request body that comes in a put/post
 //request
+app.use(express.static(__dirname + '/views'))
+//lets us display  static static pages
+app.use(express.static(__dirname + '/public'))
+//lets us display  static static pages
+
 
 app.get('/', function(req,res){
-res.send('hello from the root route');
+res.sendFile('index.html');
 })
 
 app.use('/apis/todos', todoRoutes);
