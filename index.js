@@ -15,7 +15,8 @@ res.send('hello from the root route');
 })
 
 app.use('/apis/todos', todoRoutes);
-
+// making use of routes from the ./routes/todos file
+// also prefix
 
 app.listen(port, function(){
   console.log("App is running on local host 3000");
